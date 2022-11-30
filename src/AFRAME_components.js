@@ -2,15 +2,13 @@
 AFRAME.registerComponent('bird-move',{
     schema:{},
     init:function (){
-        let bird = document.querySelector('[src="#bird"]')
+        let bird = this.el
 
         let position = {x:2.14425 ,y:1.16671 ,z:1.40571,
             toString(){
                 return this.x+' '+ this.y+' '+this.z+''
             }
         }
-
-// let key2 = {x:-2.14425 ,y:1.16671 ,z:1.40571}
         let rotation={x:-180.02985,y: 4.094356404004863,z: -179.9998479605043}
 
 
@@ -88,7 +86,7 @@ AFRAME.registerComponent('bird-move',{
                 autoplay:true,
                 update: function() {
 
-                    bird.setAttribute('rotation', position.toString.call(rotation));
+                    bird.setAttribute('rotation',  `${rotation.x} ${rotation.y} ${rotation.z}`);
                 }
             }
         )

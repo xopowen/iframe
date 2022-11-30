@@ -4,12 +4,48 @@
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<!--    зеракало -->
+    <script src="https://cdn.jsdelivr.net/npm/aframe-mirror@latest/index.js"></script>
+    <script src="https://unpkg.com/3dstreet@0.3.2/dist/aframe-street-component.js"></script>
     <script src="src/anime.min.js"></script>
     <script src="src/AFRAME_components.js"></script>
 
+
 </head>
 <body>
+<a-scene gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;">
+    <a-assets >
+        <img id="sky" src="src/media/Sky_horiz_19.png">
 
+        <a-asset-item id="road" src="src/media/obj/road.glb"></a-asset-item>
+        <a-asset-item id="bird"  src="src/media/obj/bird.glb"></a-asset-item>
+        <img  src = 'src/media/img/1645481682_5-kartinkin-net-p-kartinki-khorror-5.jpg'/>
+    </a-assets>
+    <a-entity camera="" look-controls id ="my_camera" position="-0.48569 1.6 -2.70759" wasd-controls="" rotation="-10.542423430407148 -199.16012958747422 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="">
+        <a-entity id="cursor"  cursor="fuse: true; fuseTimeout: 500"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat">
+        </a-entity>
+    </a-entity>
+    <a-plane color = '#ff0000' position="-5.71012 21.60141 6.33139" scale="96.41204 151.21747 10" mirror="textureWidth: 1365.6; textureHeight: 662.4" material="" geometry="" rotation="86.9217082259118 -4.088626826053555 -94.0951398209497"></a-plane>
+
+    <a-curvedimage src="#my-image" height="10.0" radius="90.7" theta-length="72"
+                   rotation="0 100 0" scale="0.8 0.8 0.8">
+    </a-curvedimage>
+     <a-gltf-model src="#bird"
+                  id ="Bird"
+                  position="2.14425 1.16671 1.40571"
+                  gltf-model="src/media/obj/bird.glb"
+                  animation-mixer="duration:  3"
+                  rotation="-180.03 4.1 -179.9"
+                  bird-move
+    >
+    </a-gltf-model>
+    <a-entity id="mySimpleStreet"  position="0 0 10" rotation="0 90 0" street streetmix-loader="streetmixStreetURL: https://streetmix.net/kfarr/3/" ></a-entity>
+
+</a-scene>
+<!--
 <a-scene inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
     <a-assets >
         <img id="sky" src="src/media/Sky_horiz_19.png">
@@ -26,6 +62,7 @@
         </a-entity>
     </a-entity>
     <a-sky src="#sky" id="sky" cursor-listener material="" geometry="thetaLength: 90.74"></a-sky>
+
     <a-gltf-model src="#road"
                   position="11.32896 0.34 12.13758"
                   gltf-model="src/media/obj/road.glb">
@@ -40,6 +77,9 @@
     >
     </a-gltf-model>
 
+
+
+    <a-plane position="-25.34056 2.94852 -2.24391" scale="7.79678 4.90395 10" mirror="textureWidth: 1365.6; textureHeight: 662.4" material="" geometry="" rotation="0 86.92988 0"></a-plane>
     <a-image id="xopor" look-controls="" cursor-listener="" src="src/media/img/1645481682_5-kartinkin-net-p-kartinki-khorror-5.jpg" position="-0.39 1.55897 -4.19307" material="" geometry="" rotation="" scale="1.05238 0.98791 1.00402">
     </a-image>
     <a-image src="src/media/img/planet1.png" position="-167.8534363452157 111.330793541116 -345.0768197832706" class="image-planers" look-controls="" cursor-listener="" scale="100 100 100" material="" geometry="" rotation="16.157409822689225 26.12687545796555 0"></a-image>
@@ -49,6 +89,8 @@
     <a-image src="src/media/img/planet6.png" position="-313.78937202291473 197.55714675130477 -148.77629400409964" class="image-planers" look-controls="" cursor-listener="" scale="100 100 100" material="" geometry="" rotation="29.679213787776664 64.6296392907569 0"></a-image>
     <a-image src="src/media/img/planet7.png" position="-108.99259459654536 326.5344586017199 203.45725086022708" class="image-planers" look-controls="" cursor-listener="" scale="100 100 100" material="" geometry="" rotation="54.54558209645441 152.63595662285113 0"></a-image>
 </a-scene>
+-->
+
 </body>
 
 <script src="src/js.js"></script>
